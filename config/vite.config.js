@@ -12,7 +12,9 @@ const viteCompressionFilter = /\.(js|mjs|json|css|html|svg)$/i;
 export default defineConfig({
     base: process.env.UPTIME_KUMA_BASE_PATH || "",
     server: {
+        host: "0.0.0.0",
         port: 3000,
+        allowedHosts: true,
     },
     define: {
         FRONTEND_VERSION: JSON.stringify(process.env.npm_package_version),
